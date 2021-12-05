@@ -1,9 +1,11 @@
 class List:
 
-    def __init__(self, value: int, next):
+    def __init__(self, size: int):
         self.__cursor = 0
         self.__start = 0
         self.__ending = 0
+        self.__size = size
+        self.__count = 0
     
     def acessarAtual():
         return 1
@@ -57,10 +59,16 @@ class List:
         return 1
 
     def vazia():
-        return 1
+        if (self.__start == self.__end):
+            return True
+        else:
+            return False
 
     def cheia():
-        return 1
+        if (self.__end == self.__size):
+            return True
+        else:
+            return False
 
     def posiçãoDe(chave):
         return 1
