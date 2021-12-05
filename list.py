@@ -6,10 +6,10 @@ class List:
         self.__ending = 0
         self.__size = size
         self.__count = 0
-    
+
     def acessarAtual():
         return 1
-    
+
     def inserirAntesDoAtual(novo):
         return 1
 
@@ -22,13 +22,13 @@ class List:
     def inserirNaFrente(novo):
         return 1
 
-    def inserirNaPosicao ( k, novo ):
+    def inserirNaPosicao(k, novo):
         return 1
-    
-    def excluirAtual ():
+
+    def excluirAtual():
         return 1
-    
-    def excluirPrim ():
+
+    def excluirPrim():
         return 1
 
     def excluirUlt():
@@ -40,16 +40,16 @@ class List:
     def excluirElem(chave):
         return 1
 
-    def excluirDaPos (k):
+    def excluirDaPos(k):
         return 1
 
-    def buscar (chave):
+    def buscar(chave):
         return 1
 
-    def avançarKPosições( K ):
+    def avançarKPosições(K):
         return 1
 
-    def retrocederKPosições ( K ):
+    def retrocederKPosições(K):
         return 1
 
     def irParaPrimeiro():
@@ -72,5 +72,3 @@ class List:
 
     def posiçãoDe(chave):
         return 1
-
-    

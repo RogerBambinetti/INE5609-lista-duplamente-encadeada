@@ -1,8 +1,17 @@
 class Element:
 
-    def __init__(self, value: int, next):
+    def __init__(self, previous, value: int, next):
+        self.__previous = previous
         self.__value = value
         self.__next = next
+
+    @property
+    def previous(self):
+        return self.__previous
+
+    @previous.setter
+    def previous(self, previous):
+        self.__previous = previous
 
     @property
     def value(self):
