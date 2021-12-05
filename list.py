@@ -1,8 +1,9 @@
 class List:
 
     def __init__(self, value: int, next):
-        self.__value = value
-        self.__next = next
+        self.__cursor = 0
+        self.__start = 0
+        self.__ending = 0
     
     def acessarAtual():
         return 1
