@@ -71,6 +71,8 @@ class List:
             self.__start = element
             self.__ending = element
 
+            self.__count += 1
+
         elif not self.cheia():
 
             self.irParaUltimo()
@@ -96,6 +98,8 @@ class List:
 
             self.__start = element
             self.__ending = element
+
+            self.__count += 1
 
         elif not self.cheia():
 
@@ -163,6 +167,8 @@ class List:
 
                 self.__cursor = None
 
+                self.__count -= 1
+
             else:
 
                 self.irParaPrimeiro()
@@ -189,6 +195,8 @@ class List:
 
                 self.__cursor = None
 
+                self.__count -= 1
+
             else:
 
                 self.irParaUltimo()
@@ -199,6 +207,8 @@ class List:
 
                 self.__cursor = previous
                 self.__ending = previous
+
+                self.__count -= 1
 
         else:
             raise Exception
@@ -292,7 +302,7 @@ class List:
 
     def posiçãoDe(self, key):
         element = self.__start
-        
+
         for x in range(0, self.__count):
             if element == key:
                 return x
