@@ -52,7 +52,7 @@ class List:
     def inserirApósAtual(self, value):
         if not self.cheia():
 
-            if self.__cursor == self.__end:
+            if self.__cursor == self.__ending:
                 self.inserirNoFim(value)
             else:
 
@@ -152,7 +152,7 @@ class List:
     def excluirAtual(self):
         if not self.vazia():
 
-            if self.__cursor == self.__end:
+            if self.__cursor == self.__ending:
                 self.excluirUlt()
             elif self.__cursor == self.__start:
                 self.excluirPrim()
