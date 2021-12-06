@@ -62,7 +62,16 @@ class List:
             raise Exception
 
     def inserirNoFim(self, value):
-        if not self.cheia():
+        if self.vazio():
+
+            element = Element(None, value, None)
+
+            self.__cursor = element
+
+            self.__start = element
+            self.__ending = element
+
+        elif not self.cheia():
 
             self.irParaUltimo()
             cursor = self.__cursor
@@ -72,12 +81,23 @@ class List:
             cursor.next = element
             self.__ending = element
 
+            self.__cursor = element
+
             self.__count += 1
         else:
             raise Exception
 
     def inserirNaFrente(self, value):
-        if not self.cheia():
+        if self.vazio():
+
+            element = Element(None, value, None)
+
+            self.__cursor = element
+
+            self.__start = element
+            self.__ending = element
+
+        elif not self.cheia():
 
             self.irParaPrimeiro()
             cursor = self.__cursor
@@ -86,6 +106,8 @@ class List:
 
             cursor.previous = element
             self.__start = element
+
+            self.__cursor = element
 
             self.__count += 1
         else:
@@ -134,16 +156,25 @@ class List:
     def excluirPrim(self):
         if not self.vazia():
 
-            self.irParaPrimeiro()
+            if self.__ending == self.__start:
 
-            next = self.__cursor.next
+                self.__start = None
+                self.__ending = None
 
-            next.previous = None
+                self.__cursor = None
 
-            self.__cursor = next
-            self.__start = next
+            else:
 
-            self.__count -= 1
+                self.irParaPrimeiro()
+
+                next = self.__cursor.next
+
+                next.previous = None
+
+                self.__cursor = next
+                self.__start = next
+
+                self.__count -= 1
 
         else:
             raise Exception
@@ -151,14 +182,23 @@ class List:
     def excluirUlt(self):
         if not self.vazia():
 
-            self.irParaUltimo()
+            if self.__ending == self.__start:
 
-            previous = self.__cursor.previous
+                self.__start = None
+                self.__ending = None
 
-            previous.next = None
+                self.__cursor = None
 
-            self.__cursor = previous
-            self.__ending = previous
+            else:
+
+                self.irParaUltimo()
+
+                previous = self.__cursor.previous
+
+                previous.next = None
+
+                self.__cursor = previous
+                self.__ending = previous
 
         else:
             raise Exception
