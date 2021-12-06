@@ -321,3 +321,15 @@ class List:
             if element == key:
                 return x
             element = element.next
+
+    def toArray(self):
+        #Função criada para visualizar a lista encadeada de forma mais prática
+        
+        array = []
+
+        element = self.__start
+        for x in range(0, self.__count):
+            array.append(element.value)
+            element = element.next
+        
+        return array

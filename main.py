@@ -31,6 +31,17 @@ print('Inserindo valor em dada posição')
 list.inserirNaPosicao(5, 30)
 print(list.acessarAtual().value)
 
+print('Excluir primeiro valor')
+list.excluirPrim()
+print(list.acessarAtual().value)
+
+print('Excluir último valor')
+list.excluirUlt()
+print(list.acessarAtual().value)
+
+print('Excluir valor em dada posição')
+list.excluirDaPos(5)
+print(list.acessarAtual().value)
 
 print('Verificando se lista está vazia')
 print(list.vazia())
@@ -38,3 +49,6 @@ print(list.vazia())
 print('Verificando se lista está cheia')
 print(list.cheia())
 
+
+print('Exibindo lista como array')
+print(list.toArray())
