@@ -307,7 +307,7 @@ class List:
             return False
 
     def cheia(self):
-        if (self.__end == self.__size):
+        if (self.__size == self.__count):
             return True
         else:
             return False
