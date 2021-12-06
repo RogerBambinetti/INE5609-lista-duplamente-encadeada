@@ -62,7 +62,7 @@ class List:
             raise Exception
 
     def inserirNoFim(self, value):
-        if self.vazio():
+        if self.vazia():
 
             element = Element(None, value, None)
 
@@ -90,7 +90,7 @@ class List:
             raise Exception
 
     def inserirNaFrente(self, value):
-        if self.vazio():
+        if self.vazia():
 
             element = Element(None, value, None)
 
