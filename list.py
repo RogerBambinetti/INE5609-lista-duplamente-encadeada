@@ -209,18 +209,26 @@ class List:
         return 1
 
     def avançarKPosições(self, K):
-        position = self.__cursor + K
+        cursor_position = self.posiçãoDe(self.__cursor)
+        position = cursor_position + K
 
         if(position < self.__size):
-            self.__cursor = position
+            element = self.__cursor
+            for x in range(cursor_position, position):
+                element = element.next
+            self.__cursor = element
         else:
             raise Exception
 
     def retrocederKPosições(self, K):
-        position = self.__cursor - K
+        cursor_position = self.posiçãoDe(self.__cursor)
+        position = cursor_position - K
 
-        if(position > 0):
-            self.__cursor = position
+        if(position < self.__size):
+            element = self.__cursor
+            for x in range(position, cursor_position):
+                element = element.previous
+            self.__cursor = element
         else:
             raise Exception
 
@@ -243,4 +251,9 @@ class List:
             return False
 
     def posiçãoDe(self, key):
-        return 1
+        element = self.__start
+        
+        for x in range(0, self.__count):
+            if element == key:
+                return x
+            element = element.next
