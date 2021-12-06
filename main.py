@@ -28,7 +28,7 @@ list.inserirApósAtual(21)
 print(list.acessarAtual().value)
 
 print('Inserindo valor em dada posição')
-list.inserirNaPosicao(10, 30)
+list.inserirNaPosicao(5, 30)
 print(list.acessarAtual().value)
 
 

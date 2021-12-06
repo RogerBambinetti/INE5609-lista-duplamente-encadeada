@@ -46,6 +46,7 @@ class List:
                 cursor.previous = element
 
                 self.__count += 1
+                self.__cursor = element
         else:
             raise Exception
 
@@ -65,6 +66,7 @@ class List:
                 cursor.next = element
 
                 self.__count += 1
+                self.__cursor = element
         else:
             raise Exception
 
@@ -145,7 +147,7 @@ class List:
             cursor.previous = element
 
             self.__count += 1
-
+            self.__cursor = element
         else:
             raise Exception
 
