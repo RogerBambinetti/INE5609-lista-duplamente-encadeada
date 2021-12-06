@@ -34,30 +34,37 @@ class List:
     def inserirAntesDoAtual(self, value):
         if not self.cheia():
 
-            previous = self.__cursor.previous
-            cursor = self.__cursor
+            if self.__cursor == self.__start:
+                self.inserirNaFrente(value)
+            else:
+                previous = self.__cursor.previous
+                cursor = self.__cursor
 
-            element = Element(previous, value, cursor)
+                element = Element(previous, value, cursor)
 
-            previous.next = element
-            cursor.previous = element
+                previous.next = element
+                cursor.previous = element
 
-            self.__count += 1
+                self.__count += 1
         else:
             raise Exception
 
     def inserirApósAtual(self, value):
         if not self.cheia():
 
-            next = self.__cursor.next
-            cursor = self.__cursor
+            if self.__cursor == self.__end:
+                self.inserirNoFim(value)
+            else:
 
-            element = Element(cursor, value, next)
+                next = self.__cursor.next
+                cursor = self.__cursor
 
-            next.previous = element
-            cursor.next = element
+                element = Element(cursor, value, next)
 
-            self.__count += 1
+                next.previous = element
+                cursor.next = element
+
+                self.__count += 1
         else:
             raise Exception
 
@@ -145,14 +152,19 @@ class List:
     def excluirAtual(self):
         if not self.vazia():
 
-            previous = self.__cursor.previous
-            next = self.__cursor.next
+            if self.__cursor == self.__end:
+                self.excluirUlt()
+            elif self.__cursor == self.__start:
+                self.excluirPrim()
+            else:
+                previous = self.__cursor.previous
+                next = self.__cursor.next
 
-            previous.next = next
-            next.previous = previous
-            self.__cursor = previous
+                previous.next = next
+                next.previous = previous
+                self.__cursor = previous
 
-            self.__count -= 1
+                self.__count -= 1
 
         else:
             raise Exception
