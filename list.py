@@ -231,7 +231,7 @@ class List:
         self.__cursor = self.__ending
 
     def vazia(self):
-        if (self.__start == self.__end):
+        if (self.__count == 0):
             return True
         else:
             return False
