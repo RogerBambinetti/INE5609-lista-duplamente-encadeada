@@ -205,32 +205,42 @@ class List:
         else:
             raise Exception
 
-    def buscar(key):
+    def buscar(self, key):
         return 1
 
-    def avançarKPosições(K):
-        return 1
+    def avançarKPosições(self, K):
+        position = self.__cursor + K
 
-    def retrocederKPosições(K):
-        return 1
+        if(position < self.__size):
+            self.__cursor = position
+        else:
+            raise Exception
 
-    def irParaPrimeiro():
-        return 1
+    def retrocederKPosições(self, K):
+        position = self.__cursor - K
 
-    def irParaUltimo():
-        return 1
+        if(position > 0):
+            self.__cursor = position
+        else:
+            raise Exception
 
-    def vazia():
+    def irParaPrimeiro(self):
+        self.__cursor = self.__start
+
+    def irParaUltimo(self):
+        self.__cursor = self.__ending
+
+    def vazia(self):
         if (self.__start == self.__end):
             return True
         else:
             return False
 
-    def cheia():
+    def cheia(self):
         if (self.__end == self.__size):
             return True
         else:
             return False
 
-    def posiçãoDe(key):
+    def posiçãoDe(self, key):
         return 1
